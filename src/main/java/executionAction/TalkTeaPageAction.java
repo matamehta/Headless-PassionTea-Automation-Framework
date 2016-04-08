@@ -39,14 +39,17 @@ public class TalkTeaPageAction {
      * @param subject
      * @param message
      */
-    public void sendEmail(String name, String email, String subject, String message) {
+    public void sendEmail(String name, String email, String subject, String message) throws InterruptedException {
         ttp.textName.sendKeys(name);
         ttp.textEmail.sendKeys(email);
         ttp.textSubject.sendKeys(subject);
         ttp.textareaMessage.sendKeys(message);
+        Thread.sleep(5);
         WebDriverWait wait = new WebDriverWait(driver, 60);
         WebElement btnSubmit = wait.until(ExpectedConditions.elementToBeClickable(By.className("form-submit")));
+
         btnSubmit.click();
+
     }
 
     /**

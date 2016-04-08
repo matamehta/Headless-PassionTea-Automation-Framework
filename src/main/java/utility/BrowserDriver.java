@@ -1,45 +1,28 @@
 package utility;
 
-import com.gargoylesoftware.htmlunit.BrowserVersion;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.remote.UnreachableBrowserException;
-import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.io.File;
 
 /**
  * Created by zhangd on 4/04/2016.
  */
 public class BrowserDriver {
-    private static HtmlUnitDriver driver;
+    private static File file = new File("src/main/resources/phantomjs.exe");
+    private static WebDriver driver;
 
     public synchronized static WebDriver getCurrentDriver() {
         String browser;
 
-        if (System.getProperty("selenium.browser") == null) {
-            browser = "firefox";
-        } else {
-            browser = System.getProperty("selenium.browser");
-        }
+        System.setProperty("phantomjs.binary.path", file.getAbsolutePath());
 
         if (driver == null) {
             try {
-                switch (browser) {
-                    case "chrome":
-                        driver = new HtmlUnitDriver(BrowserVersion.CHROME);
-                        break;
-                    case "ie":
-                        driver = new HtmlUnitDriver(BrowserVersion.INTERNET_EXPLORER_11);
-                        break;
-                    case "firefox":
-                    default:
-                        driver = new HtmlUnitDriver(BrowserVersion.FIREFOX_38);
-                        break;
-                }
-                driver.manage().window().maximize();
+                driver = new PhantomJSDriver();
             } finally {
                 Runtime.getRuntime().addShutdownHook(new Thread(new BrowserCleanup()));
             }
