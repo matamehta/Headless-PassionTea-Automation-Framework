@@ -50,7 +50,11 @@
             <artifactId>phantomjsdriver</artifactId>
             <version>1.1.0</version>
         </dependency>
-
+        <dependency>
+            <groupId>net.anthavio</groupId>
+            <artifactId>phanbedder-1.9.2</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
 
     <build>

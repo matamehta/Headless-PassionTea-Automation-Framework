@@ -34,22 +34,20 @@ public class TalkTeaPageAction {
 
     /**
      * Fill in the form and submit it
+     *
      * @param name
      * @param email
      * @param subject
      * @param message
      */
-    public void sendEmail(String name, String email, String subject, String message) throws InterruptedException {
+    public void sendEmail(String name, String email, String subject, String message) {
         ttp.textName.sendKeys(name);
         ttp.textEmail.sendKeys(email);
         ttp.textSubject.sendKeys(subject);
         ttp.textareaMessage.sendKeys(message);
-        Thread.sleep(5);
         WebDriverWait wait = new WebDriverWait(driver, 60);
         WebElement btnSubmit = wait.until(ExpectedConditions.elementToBeClickable(By.className("form-submit")));
-
         btnSubmit.click();
-
     }
 
     /**
