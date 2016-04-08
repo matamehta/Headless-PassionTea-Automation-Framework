@@ -5,5 +5,3 @@ jdk:
 
 script:
   - mvn clean install -B
-  
-script: phantomjs testrunner.js
