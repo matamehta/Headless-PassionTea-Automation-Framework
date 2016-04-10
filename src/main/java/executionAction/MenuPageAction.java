@@ -26,6 +26,14 @@ public class MenuPageAction {
     public MenuPageAction() {
         BrowserDriver.loadPage(_Constants.MenuPageURL, _Constants.MenuPageTitle);
         PageFactory.initElements(driver, mp);
+
+        // Clean previous files in the directory
+        try {
+            FileUtils.cleanDirectory(new File(_Constants.MenuPageScreenshot));
+            PublicFunctions.captureScreenShot(driver, _Constants.MenuPageScreenshot, "TestCase003");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**

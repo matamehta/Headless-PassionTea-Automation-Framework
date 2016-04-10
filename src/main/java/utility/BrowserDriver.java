@@ -25,6 +25,7 @@ public class BrowserDriver {
         if (driver == null) {
             try {
                 driver = new PhantomJSDriver(desiredCapabilities);
+                driver.manage().window().maximize();
             } finally {
                 Runtime.getRuntime().addShutdownHook(new Thread(new BrowserCleanup()));
             }

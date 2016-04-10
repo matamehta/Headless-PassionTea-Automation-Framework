@@ -27,6 +27,14 @@ public class WelcomePageAction {
     public WelcomePageAction() {
         BrowserDriver.loadPage(_Constants.WelcomePageURL, _Constants.WelcomePageTitle);
         PageFactory.initElements(driver, wp);
+
+        // Clean previous files in the directory
+        try {
+            FileUtils.cleanDirectory(new File(_Constants.WelcomePageScreenshot));
+            PublicFunctions.captureScreenShot(driver, _Constants.WelcomePageScreenshot, "TestCase001");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**

@@ -1,21 +1,28 @@
 package utility;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * Created by zhangd on 4/04/2016.
  */
 public class PublicFunctions {
-
     /**
-     * Move the mouse to one specific element
+     * Capture the screen shot
+     *
      * @param driver the instance of WebDriver
-     * @param element WebElement you want to hover on
      */
-    public static void mouseHoverToElement(WebDriver driver, WebElement element) {
-        Actions action = new Actions(driver);
-        action.moveToElement(element).perform();
+    public static void captureScreenShot(WebDriver driver, String testCase, String pageName) {
+        try {
+            File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(srcFile, new File(testCase + "\\" + pageName + "-" + System.currentTimeMillis() + ".jpg"));
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 }

@@ -26,5 +26,13 @@ public class PassionPageAction {
     public PassionPageAction() {
         BrowserDriver.loadPage(_Constants.PassionPageURL, _Constants.PassionPageTitle);
         PageFactory.initElements(driver, pp);
+
+        // Clean previous files in the directory
+        try {
+            FileUtils.cleanDirectory(new File(_Constants.PassionPageScreenshot));
+            PublicFunctions.captureScreenShot(driver, _Constants.PassionPageScreenshot, "TestCase002");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -30,6 +30,14 @@ public class TalkTeaPageAction {
     public TalkTeaPageAction() {
         BrowserDriver.loadPage(_Constants.TalkTeaPageURL, _Constants.TalkTeaPageTitle);
         PageFactory.initElements(driver, ttp);
+
+        // Clean previous files in the directory
+        try {
+            FileUtils.cleanDirectory(new File(_Constants.TalkTeaPageScreenshot));
+            PublicFunctions.captureScreenShot(driver, _Constants.TalkTeaPageScreenshot, "TestCase004");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**

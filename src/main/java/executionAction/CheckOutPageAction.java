@@ -25,6 +25,14 @@ public class CheckOutPageAction {
     public CheckOutPageAction() {
         BrowserDriver.loadPage(_Constants.CheckOutPageURL, _Constants.CheckOutPageTitle);
         PageFactory.initElements(driver, cop);
+
+        // Clean previous files in the directory
+        try {
+            FileUtils.cleanDirectory(new File(_Constants.CheckOutScreenshot));
+            PublicFunctions.captureScreenShot(driver, _Constants.CheckOutScreenshot, "TestCase005");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
