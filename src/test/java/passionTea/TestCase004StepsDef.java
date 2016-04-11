@@ -7,6 +7,7 @@ import executionAction.TalkTeaPageAction;
 
 /**
  * Created by zhangd on 4/04/2016.
+ * This is the step definition of test case 004
  */
 public class TestCase004StepsDef {
     private static TalkTeaPageAction ttpa;

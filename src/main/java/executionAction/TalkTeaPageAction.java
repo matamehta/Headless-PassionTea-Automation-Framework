@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import utility.BrowserDriver;
+import utility.DriverFactory;
 import utility.PublicFunctions;
 
 import java.io.File;
@@ -18,17 +18,18 @@ import java.io.IOException;
 
 /**
  * Created by zhangd on 4/04/2016.
+ * This is the page actions for talk to tea page
  */
 public class TalkTeaPageAction {
-    TalkTeaPage ttp = new TalkTeaPage();
-    WebDriver driver = BrowserDriver.getCurrentDriver();
+    private TalkTeaPage ttp = new TalkTeaPage();
+    private WebDriver driver = DriverFactory.getCurrentDriver();
 
     /**
      * Constructor
      * Load the page, initiate page elements and clean files in the directory
      */
     public TalkTeaPageAction() {
-        BrowserDriver.loadPage(_Constants.TalkTeaPageURL, _Constants.TalkTeaPageTitle);
+        DriverFactory.loadPage(_Constants.TalkTeaPageURL, _Constants.TalkTeaPageTitle);
         PageFactory.initElements(driver, ttp);
 
         // Clean previous files in the directory
@@ -43,10 +44,10 @@ public class TalkTeaPageAction {
     /**
      * Fill in the form and submit it
      *
-     * @param name
-     * @param email
-     * @param subject
-     * @param message
+     * @param name customer name
+     * @param email customer email
+     * @param subject email's subject
+     * @param message email's message
      */
     public void sendEmail(String name, String email, String subject, String message) {
         ttp.textName.sendKeys(name);

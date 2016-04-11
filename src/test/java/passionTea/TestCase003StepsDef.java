@@ -4,13 +4,13 @@ import config._Constants;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 import executionAction.MenuPageAction;
 import org.junit.Assert;
-import utility.BrowserDriver;
+import utility.DriverFactory;
 
 /**
  * Created by zhangd on 4/04/2016.
+ * This is the step definition of test case 003
  */
 public class TestCase003StepsDef {
     private static MenuPageAction mpa;
@@ -27,6 +27,6 @@ public class TestCase003StepsDef {
 
     @Then("^I should land at check out page$")
     public void I_should_land_at_check_out_page() throws Throwable {
-        Assert.assertTrue(BrowserDriver.getCurrentDriver().getTitle().equals(_Constants.CheckOutPageTitle));
+        Assert.assertTrue(DriverFactory.getCurrentDriver().getTitle().equals(_Constants.CheckOutPageTitle));
     }
 }

@@ -6,10 +6,11 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import executionAction.CheckOutPageAction;
 import org.junit.Assert;
-import utility.BrowserDriver;
+import utility.DriverFactory;
 
 /**
  * Created by zhangd on 4/04/2016.
+ * This is the step definition of test case 005
  */
 public class TestCase005StepsDef {
     private static CheckOutPageAction copa;
@@ -31,6 +32,6 @@ public class TestCase005StepsDef {
 
     @Then("^I should go back to menu page$")
     public void I_should_go_back_to_menu_page() throws Throwable {
-        Assert.assertTrue(BrowserDriver.getCurrentDriver().getTitle().equals(_Constants.MenuPageTitle));
+        Assert.assertTrue(DriverFactory.getCurrentDriver().getTitle().equals(_Constants.MenuPageTitle));
     }
 }

@@ -4,11 +4,13 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+
 import java.io.File;
 import java.io.IOException;
 
 /**
  * Created by zhangd on 4/04/2016.
+ * This is a Public Functions class to define some public functions
  */
 public class PublicFunctions {
     /**

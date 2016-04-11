@@ -1,9 +1,10 @@
-@all
+@All
 Feature: PassionTea CheckOut Page
   As a customer, I want to view PassionTea checkout page, so that I know what PassionTea's check out is
 
   Background: PassionTea Check Out Page UI & Functional Testing
 
+  @Checkout @Form
   Scenario Outline: Navigate to PassionTea's Check Out Page
     Given I open PassionTea checkout page URL
     When I fill in the customer form with '<Email>', '<Name>' and '<Address>'

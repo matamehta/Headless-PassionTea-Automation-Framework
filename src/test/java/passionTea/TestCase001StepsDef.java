@@ -6,10 +6,11 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import executionAction.WelcomePageAction;
 import org.junit.Assert;
-import utility.BrowserDriver;
+import utility.DriverFactory;
 
 /**
  * Created by zhangd on 4/04/2016.
+ * This is the step definition of test case 001
  */
 public class TestCase001StepsDef {
     private static WelcomePageAction wpa;
@@ -26,6 +27,6 @@ public class TestCase001StepsDef {
 
     @Then("^I should land at correct welcome page$")
     public void I_should_land_at_correct_welcome_page() throws Throwable {
-        Assert.assertTrue(BrowserDriver.getCurrentDriver().getTitle().equals(_Constants.WelcomePageTitle));
+        Assert.assertTrue(DriverFactory.getCurrentDriver().getTitle().equals(_Constants.WelcomePageTitle));
     }
 }

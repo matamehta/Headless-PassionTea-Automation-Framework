@@ -5,7 +5,7 @@ import objectRepo.CheckOutPage;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import utility.BrowserDriver;
+import utility.DriverFactory;
 import utility.PublicFunctions;
 
 import java.io.File;
@@ -13,17 +13,18 @@ import java.io.IOException;
 
 /**
  * Created by zhangd on 4/04/2016.
+ * This is the page actions for check out page
  */
 public class CheckOutPageAction {
-    CheckOutPage cop = new CheckOutPage();
-    WebDriver driver = BrowserDriver.getCurrentDriver();
+    private CheckOutPage cop = new CheckOutPage();
+    private WebDriver driver = DriverFactory.getCurrentDriver();
 
     /**
      * Constructor
      * Load the page, initiate page elements and clean files in the directory
      */
     public CheckOutPageAction() {
-        BrowserDriver.loadPage(_Constants.CheckOutPageURL, _Constants.CheckOutPageTitle);
+        DriverFactory.loadPage(_Constants.CheckOutPageURL, _Constants.CheckOutPageTitle);
         PageFactory.initElements(driver, cop);
 
         // Clean previous files in the directory
@@ -38,9 +39,9 @@ public class CheckOutPageAction {
     /**
      * Fill in the customer form
      *
-     * @param email
-     * @param name
-     * @param address
+     * @param email customer email address
+     * @param name customer name
+     * @param address customer address
      */
     public void fillCustomerInfo(String email, String name, String address) {
         cop.txtEmail.sendKeys(email);
@@ -51,10 +52,10 @@ public class CheckOutPageAction {
     /**
      * Fill in the payment form
      *
-     * @param cardType
-     * @param cardNo
-     * @param cardholderName
-     * @param verificationCode
+     * @param cardType customer card type
+     * @param cardNo customer card number
+     * @param cardholderName customer cardholder name
+     * @param verificationCode customer verification code
      */
     public void fillPaymentInfo(String cardType, String cardNo, String cardholderName, String verificationCode) {
         cop.selectCard.sendKeys(cardType);

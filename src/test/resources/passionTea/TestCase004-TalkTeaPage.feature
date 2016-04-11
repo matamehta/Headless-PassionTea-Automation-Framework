@@ -1,9 +1,10 @@
-@all
+@All
 Feature: PassionTea TalkTeaPage Page
   As a customer, I want to view PassionTea menu page, so that I know what PassionTea's menu is
 
   Background: PassionTea Menu Page UI & Functional Testing
 
+  @Form
   Scenario Outline: Navigate to PassionTea's Menu Page
     Given I open PassionTea talk-to-tea page URL
     When I fill in the form with '<Name>', '<Email>', '<Subject>', '<Message>' and submit

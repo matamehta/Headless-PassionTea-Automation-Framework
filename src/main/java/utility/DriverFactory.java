@@ -13,8 +13,9 @@ import java.io.File;
 
 /**
  * Created by zhangd on 4/04/2016.
+ * This is a Driver Factory class to define how PhantomJSDriver works
  */
-public class BrowserDriver {
+public class DriverFactory {
     private static File phantomJSFile = Phanbedder.unpack();
     private static DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
     private static WebDriver driver;
@@ -39,7 +40,7 @@ public class BrowserDriver {
         }
     }
 
-    public static void close() {
+    private static void close() {
         try {
             getCurrentDriver().quit();
             driver = null;

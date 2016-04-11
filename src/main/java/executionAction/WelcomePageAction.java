@@ -4,10 +4,9 @@ import config._Constants;
 import objectRepo.WelcomePage;
 import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import utility.BrowserDriver;
+import utility.DriverFactory;
 import utility.PublicFunctions;
 
 import java.io.File;
@@ -15,17 +14,18 @@ import java.io.IOException;
 
 /**
  * Created by zhangd on 4/04/2016.
+ * This is the page actions for welcome page
  */
 public class WelcomePageAction {
-    WelcomePage wp = new WelcomePage();
-    WebDriver driver = BrowserDriver.getCurrentDriver();
+    private WelcomePage wp = new WelcomePage();
+    private WebDriver driver = DriverFactory.getCurrentDriver();
 
     /**
      * Constructor
      * Load the page, initiate page elements and clean files in the directory
      */
     public WelcomePageAction() {
-        BrowserDriver.loadPage(_Constants.WelcomePageURL, _Constants.WelcomePageTitle);
+        DriverFactory.loadPage(_Constants.WelcomePageURL, _Constants.WelcomePageTitle);
         PageFactory.initElements(driver, wp);
 
         // Clean previous files in the directory
