@@ -11,8 +11,9 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = {"src/test/resources/passionTea/"},
-        format = {"pretty", "html:target/cucumber-html-report", "json:target/cucumber-json-report.json"},
-        tags = {"@All"}
+        tags = {"@All"},
+        monochrome = true,
+        format = {"pretty", "html:target/cucumber-html-report", "json:target/cucumber-json-report.json"}
 )
 
 public class RunTestSuiteTest {

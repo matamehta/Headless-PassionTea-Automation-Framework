@@ -7,7 +7,7 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import utility.DriverFactory;
-import utility.PublicFunctions;
+import utility.Utilities;
 
 import java.io.File;
 import java.io.IOException;
@@ -31,7 +31,7 @@ public class WelcomePageAction {
         // Clean previous files in the directory
         try {
             FileUtils.cleanDirectory(new File(_Constants.WelcomePageScreenshot));
-            PublicFunctions.captureScreenShot(driver, _Constants.WelcomePageScreenshot, "TestCase001");
+            Utilities.captureScreenShot(_Constants.WelcomePageScreenshot, "TestCase001");
         } catch (IOException e) {
             e.printStackTrace();
         }

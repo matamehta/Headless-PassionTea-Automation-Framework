@@ -11,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utility.DriverFactory;
-import utility.PublicFunctions;
+import utility.Utilities;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,7 +35,7 @@ public class TalkTeaPageAction {
         // Clean previous files in the directory
         try {
             FileUtils.cleanDirectory(new File(_Constants.TalkTeaPageScreenshot));
-            PublicFunctions.captureScreenShot(driver, _Constants.TalkTeaPageScreenshot, "TestCase004");
+            Utilities.captureScreenShot(_Constants.TalkTeaPageScreenshot, "TestCase004");
         } catch (IOException e) {
             e.printStackTrace();
         }
