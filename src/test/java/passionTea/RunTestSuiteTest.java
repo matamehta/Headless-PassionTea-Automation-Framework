@@ -12,7 +12,6 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {"src/test/resources/passionTea/"},
         tags = {"@All"},
-        monochrome = true,
         format = {"pretty", "html:target/cucumber-html-report", "json:target/cucumber-json-report.json"}
 )
 
