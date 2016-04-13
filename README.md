@@ -1,4 +1,4 @@
-Introduction
+Introduction [![Build Status](https://travis-ci.org/DIZhang1109/Headless-PassionTea-Automation-Framework.svg?branch=master)](https://travis-ci.org/DIZhang1109/Headless-PassionTea-Automation-Framework)
 ============
 This is a sample project that can be used to start off using PhantomJS - Selenium - Cucumber **(Headless Website Functional Testing)**
 
@@ -14,3 +14,4 @@ Notes:
 2.	With cucumber-jvm-report plug-in, it can generate a pretty cucumber html report on Jenkins
 3.	Replace selenium web driver with phantomjs ghost driver so as to improve the performance (http://phantomjs.org/)
 4.	Configure .travis.yml to run on Travis-CI successfully
+
