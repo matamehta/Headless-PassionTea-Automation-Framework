@@ -1,4 +1,5 @@
-Introduction [![Build Status](https://travis-ci.org/DIZhang1109/Headless-PassionTea-Automation-Framework.svg?branch=master)](https://travis-ci.org/DIZhang1109/Headless-PassionTea-Automation-Framework) [![Coverage Status](https://coveralls.io/repos/github/DIZhang1109/Headless-PassionTea-Automation-Framework/badge.svg?branch=master)](https://coveralls.io/github/DIZhang1109/Headless-PassionTea-Automation-Framework?branch=master)
+Introduction
+[![Build Status](https://travis-ci.org/DIZhang1109/Headless-PassionTea-Automation-Framework.svg?branch=master)](https://travis-ci.org/DIZhang1109/Headless-PassionTea-Automation-Framework) [![Coverage Status](https://coveralls.io/repos/github/DIZhang1109/Headless-PassionTea-Automation-Framework/badge.svg?branch=master)](https://coveralls.io/github/DIZhang1109/Headless-PassionTea-Automation-Framework?branch=master)
 ============
 This is a sample project that can be used to start off using PhantomJS - Selenium - Cucumber **(Headless Website Functional Testing)**
 
