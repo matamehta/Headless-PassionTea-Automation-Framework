@@ -11,5 +11,5 @@ This is a sample project that can be used to start off using PhantomJS - Seleniu
 1.	It is built based on cucumber-java-skeleton (https://github.com/cucumber/cucumber-java-skeleton)
 2.	With cucumber-jvm-report plug-in, it can generate a pretty cucumber html report on Jenkins
 3.	Replace selenium web driver with phantomjs ghost driver so as to improve the performance (http://phantomjs.org/)
-4.	Configure .travis.yml to run on Travis-CI successfully
-
+4.	Configure .travis.yml to run on Travis CI successfully
+5.  Configure jacoco and coveralls in pom.xml to run the code coverage on Coveralls successfully
